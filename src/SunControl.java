@@ -14,35 +14,34 @@ public class SunControl {
 
 
 class SunFrame extends JFrame {
-    private SunPanel sunPanel;
-    private JButton upButton, downButton, leftButton, rightButton, dayButton, nightButton;
+    private final SunPanel sunPanel;
 
     public SunFrame() {
         sunPanel = new SunPanel();
         JPanel buttonPanel = new JPanel(new GridLayout(2,3));
 
-        upButton = new JButton("Up");
+        JButton upButton = new JButton("Up");
         upButton.addActionListener(e -> sunPanel.moveSun(0, -10));
         buttonPanel.add(upButton);
 
-        downButton = new JButton("Down");
+        JButton downButton = new JButton("Down");
         downButton.addActionListener(e -> sunPanel.moveSun(0, 10));
         buttonPanel.add(downButton);
 
-        leftButton = new JButton("Left");
+        JButton leftButton = new JButton("Left");
         leftButton.addActionListener(e -> sunPanel.moveSun(-10, 0));
         buttonPanel.add(leftButton);
 
-        rightButton = new JButton("Right");
+        JButton rightButton = new JButton("Right");
         rightButton.addActionListener(e -> sunPanel.moveSun(10, 0));
         buttonPanel.add(rightButton);
 
-        dayButton = new JButton("Day");
+        JButton dayButton = new JButton("Day");
         dayButton.addActionListener(e -> sunPanel.setDay(true));
 
         buttonPanel.add(dayButton);
 
-        nightButton = new JButton("Night");
+        JButton nightButton = new JButton("Night");
         nightButton.addActionListener(e -> sunPanel.setDay(false));
         buttonPanel.add(nightButton);
 
